@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>BoomShift.com</title>
+  
+  <!-- HTML -->
+  <style>
+    
+  </style>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styleBS.css">
+</head>
+<body>
+ <div class="body">
+ <div class="heading">
+<h1 id="BoomShiftH1">Boom Shift</h1><img id="img" src="/Screenshot_2025_1111_205227.png" alt="ghost-icon">
+<div class="ellipsis" id="popup-bttn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div id="dot">
+    <span class="dot dot1"></span>
+    <span class="dot dot2"></span>
+    <span class="dot dot3"></span>
+    <span class="dot dot4"></span>
+    <span class="dot dot5"></span>
+</div>
+</div>
+           <!--This is sideBar -->
+ <div style="display:none;" id='popup-page' class="nav_bar_container">
+   <span>
+          <p id="ActivateS" class="nav_items"><svg width="30" height="30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="40" cy="40" r="25" stroke="white" stroke-width="8" fill="none" />
+  <line x1="55" y1="55" x2="80" y2="80" stroke="white" stroke-width="9" />
+</svg><i class="fa fa-arrow-right"></i>Search</p>
+     <p class="nav_items" onclick="lookForMkt()"><svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+  <path d="M5.223 2.25c-.497 0-.974.198-1.325.55l-1.3 1.298A3.75 3.75 0 0 0 7.5 9.75c.627.47 1.406.75 2.25.75.844 0 1.624-.28 2.25-.75.626.47 1.406.75 2.25.75.844 0 1.623-.28 2.25-.75a3.75 3.75 0 0 0 4.902-5.652l-1.3-1.299a1.875 1.875 0 0 0-1.325-.549H5.223Z" />
+  <path fill-rule="evenodd" d="M3 20.25v-8.755c1.42.674 3.08.673 4.5 0A5.234 5.234 0 0 0 9.75 12c.804 0 1.568-.182 2.25-.506a5.234 5.234 0 0 0 2.25.506c.804 0 1.567-.182 2.25-.506 1.42.674 3.08.675 4.5.001v8.755h.75a.75.75 0 0 1 0 1.5H2.25a.75.75 0 0 1 0-1.5H3Zm3-6a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-.75.75h-3a.75.75 0 0 1-.75-.75v-3Zm8.25-.75a.75.75 0 0 0-.75.75v5.25c0 .414.336.75.75.75h3a.75.75 0 0 0 .75-.75v-5.25a.75.75 0 0 0-.75-.75h-3Z" clip-rule="evenodd" />
+</svg><i class="fa fa-home"></i>Market</li>
+    
+    <li class="nav_items"><svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+  <path d="M5.85 3.5a.75.75 0 0 0-1.117-1 9.719 9.719 0 0 0-2.348 4.876.75.75 0 0 0 1.479.248A8.219 8.219 0 0 1 5.85 3.5ZM19.267 2.5a.75.75 0 1 0-1.118 1 8.22 8.22 0 0 1 1.987 4.124.75.75 0 0 0 1.48-.248A9.72 9.72 0 0 0 19.266 2.5Z" />
+  <path fill-rule="evenodd" d="M12 2.25A6.75 6.75 0 0 0 5.25 9v.75a8.217 8.217 0 0 1-2.119 5.52.75.75 0 0 0 .298 1.206c1.544.57 3.16.99 4.831 1.243a3.75 3.75 0 1 0 7.48 0 24.583 24.583 0 0 0 4.83-1.244.75.75 0 0 0 .298-1.205 8.217 8.217 0 0 1-2.118-5.52V9A6.75 6.75 0 0 0 12 2.25ZM9.75 18c0-.034 0-.067.002-.1a25.05 25.05 0 0 0 4.496 0l.002.1a2.25 2.25 0 1 1-4.5 0Z" clip-rule="evenodd" />
+</svg><i class="fa fa-bell"></i>Notifications</li>
+
+     <li class="nav_items" id="profile1"><i class="fa fa-profile"><svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+  <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-5.5-2.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM10 12a5.99 5.99 0 0 0-4.793 2.39A6.483 6.483 0 0 0 10 16.5a6.483 6.483 0 0 0 4.793-2.11A5.99 5.99 0 0 0 10 12Z" clip-rule="evenodd" />
+</svg></i>Profile</li>
+
+  <li class="nav_items" id="myGarage">
+    <i class ="fa fa-profile"><svg width="32" height="32" viewBox= "0 0 60 60"  fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="24" width="48" height="32" fill="none" stroke="white" stroke-width="2"/>
+  <polygon points="32,8 6,24 58,24" fill="none" stroke="white" stroke-width="2"/>
+  <rect x="16" y="32" width="32" height="16" fill="gray" stroke="white" stroke-width="2"/>
+  <line x1="16" y1="40" x2="48" y2="40" stroke="#fff" stroke-width="2"/>
+  <line x1="16" y1="36" x2="48" y2="36" stroke="white" stroke-width="2"/>
+</svg></i>My garage <p id="caption" style="display:none;">(Wishlist&Order/s)</p></li>
+
+<!--about page-->
+ <li class="nav_items" id="abS"><i class="fa fa-location-arrow"><svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+  <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
+</svg></i>About Us</p>
+
+     <li class="nav_items" id="more"><i class="fa fa-star"><svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+  <path d="M2 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM6.5 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM12.5 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />
+</svg></i>More</li>
+   <ul id="secList"style="display:none">
+     <li class="sLb" id="bookListNg" >Book to view</li>
+     <li class="sLb">My providers</li>
+     <li class="sLb" id="">licenses</li>
+     <li class="sLb">Ts & Cs</li>
+   </ul>
+     
+ </div>
+ <div id="proPage" style="display:none;">
+   <div id="profileS">
+    <div id="profilePCntna">
+    <div id="profilePreview">
+  <img id="profilePic" style="width:100px; height:100px; border-radius:50%;" src=``/>
+  </div>
+  <label for="profileInput" capture="camera" class="FAB"><svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6c">
+  <path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" />
+  <path fill-rule="evenodd" d="M9.344 3.071a49.52 49.52 0 0 1 5.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 0 0 1.11-.71l.822-1.315a2.942 2.942 0 0 1 2.332-1.39ZM6.75 12.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Zm12-1.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+</svg></label><input type="file" id="profileInput" accept="image/*" style="display:none;">
+</div>
+   <h2 id='name'></h2>
+   <p id="number"></p>
+   <p id="email"></p>
+ 
+ <button id="editProfile">Edit profile</button>
+ <br>
+ <hr style="width:100%;">
+ </div>
+ </div>
+ 
+             <!--Search bar -->
+<input type="search" id="searchInput" placeholder="Search..."/>
+
+<div id="suggestions"></div>
+
+<button id="cancel">x</button>
+
+ <div class="ghost" id="ghost"></div>
+ 
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-direction:column;"> 
+ <div class="filters" id="filters">
+<button class="filter-btn" onclick="setFilter(price)"> price </button>
+<button class="filter-btn" onclick="setFilter(location)">location</button>
+<button class="filter-btn" onclick="setFilter(cond)">condition</button>
+<button class="filter-btn" onclick="setFilter(yearModel)">year</button>
+<button class="filter-btn" onclick="resetFilter()">resetAll</button>
+</div>
+</div>
+
+       <!--this is the alert code-->
+  <div id="cPMAlert">
+    <div id="promptM" style="display:none;"> 
+    <p><strong>Booking confirmation :</strong></p>
+  <div id="alert"><!--alert goes here --></div>
+    <br>
+    <div id="conb">
+    <button class="button">Yeah sure</button>
+   <button class="button" id="cnl">Cancel</button>
+    </div>
+    </div>
+    </div>
+
+   <!-- this is the product-list page -->
+<div id="product-list"></div>
+
+<div id="image-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%; background:#b1b1b199;justify-content:center;align-items:center; z-index:9999;">
+<img id="modal-img" style="max-width:70%; max-height:70%;border-radius:10px;"/>
+</div>
+
+
+  <!-- incompatible screen message -->
+<div id="incompatible-screen" style="display: none;">Oops, website not compatible with your screen.</div>
+<div id="full-details"></div>
+<div style="display:flex; align-items:center;justify-content:space-between;flex-direction:column;">
+<div id="toolTip" style=" position:fixed; top:40%; background-color:white; padding:10px; color:#1899ff; text-align:center; border-radius:25px;box-shadow:0 0 8pt black;width:90%; display:none;">
+  <h3>Tool-Tip</h3>
+  <ul>
+    <li>Shake your phone to refresh App.</li>
+    <li>Double tap product container to add to wish list.</li>
+    <li>There's a menu button on the top right side of the app, you can use that to navigate through the app.</li>
+  </ul>
+  <p style="color:#888">// Shake your phone to remove Tool-Tip</p>
+</div>
+</div>
+
+<!-- My garage content -->
+<div style="display:flex;align-items:center;justify-content:space-between;flex-direction:column;">
+<div id='my_garageP' style="display:none;">
+  <h2 class="garageWords">Whishlist</h2>
+  <div id="myWishlist"></div>
+  <button id="delete">Delete All</button>
+  <br>
+  <h2 class="garageWords">orders</h2>
+  <p>this is where orders shall be placed</p>
+</div>
+
+<!-- Notification that will be happening on BS👻-->
+<div id="numberText"></div>
+
+<!-- profile code -->
+
+<!-- for my about us page -->
+<div id="absPage">
+    <div id="absContent" style="display:none;">
+    <h2>About Us</h2>
+    <br>
+    <h4>Boom Shift: </h4>
+ <br>
+<p>We are your go-to ghost (👻) — connecting you with some of the <strong>EST</strong> car dealers and agents out there.</p>
+
+<p>These dealers are the Fast<b>est</b>, Big<b>gest</b>, Smart<b>est</b>, and Wis<b>est</b> when it comes to helping you find the car of your dreams — all with convenience and reliability.</p>
+
+<p>Enjoy a seamless car shopping experience from the comfort of your own home.</p>
+<br>
+
+<h4>What about scammers?</h4>
+<p>We’ve built a verification system that helps instantly detect and block scammers. As long as all communication and transactions happen through our platform, your experience is safe and secure.</p>
+<br>
+
+<h4>What if I buy a faulty car on Boom Shift 👻?</h4>
+<p>If you end up with a faulty car (and it's not your fault), you may be eligible for a full refund or a swap — depending on the payment system used and the dealer's policy. Our team will step in to assist you in resolving the issue.</p>
+<br>
+
+<h4>Does Boom Shift only sell cars?</h4>
+<p>Yes and no — well, kind of. If you're just a regular person wanting to sell your car quickly, contact us on <strong>0777708423</strong> and say:</p>
+<p><em>"Hey, I'm looking to sell my car — [Model], [Year], [Pictures], [Proof of Ownership] & [Location]"</em></p>
+<p>We’ll send an agent to inspect the car, take high-quality pictures, and list it on Boom Shift 👻 for you at your asking price. A few weeks later, your car could be sold. Easy.</p>
+<br>
+
+<h4>Founder, CEO & Developer:</h4>
+<p><strong>JUSTIN SKYIE</strong></p>
+<br>
+
+<p style="background:#1899ff;padding:5px;border-radius:20px;"><i>© 2026 Boom Shift. All rights reserved.</i></p>
+<br>
+<footer>This is a software product of <strong>Skyie Technologies</strong>.</footer>
+    </div>
+    </div>
+<script src="BoomShift.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
