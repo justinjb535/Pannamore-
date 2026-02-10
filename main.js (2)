@@ -46,10 +46,6 @@ document.addEventListener("click",(event)=>{
    display.innHTML = "";
  });
  
- function getFingerprint(){
-  return navigator.userAgent + screen.width + screen.height + navigator.language + new Date().getTimezoneOffset();
+ function myBooks(){
+  alert("can't view downloaded books because still under construction");
 }
-const userId = btoa(unescape(encodeURIComponent(getFingerprint()))).slice(0,15);
-
-console.log("this is the user who viewed", userId)
-
