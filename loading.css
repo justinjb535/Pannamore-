@@ -1,0 +1,69 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+  background:#189;
+}
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:row-reverse ;
+  width: 100%;
+  height: 100%;
+  margin-top: 70%;
+  border-radius:20%;
+  gap:5px;
+}
+.loading span{
+  width:5px;
+  height:150px;
+  background: darkblue;
+  animation:scale 1s ease-in infinite;
+}
+.loading span:nth-child(2){
+  background: red;
+  animation-delay:0.9s;
+}
+.loading span:nth-child(3){
+  background: white;
+  animation-delay:0.8s;
+}
+.loading span:nth-child(4){
+  background: #0E7806E6;
+  animation-delay:0.7s;
+}
+.loading span:nth-child(5){
+  background: orange;
+  animation-delay:0.6s;
+}
+@keyframes scale{
+  0%,50%,100%{
+    transform: scaleY(0.09);
+  }
+  25%{
+    transform: scaleY(1);
+  }
+}
+.appName{
+  position: fixed;
+  top:60%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:30px;
+}
+#p{
+  animation:scaleUpp 0.3s ease;
+  animation-delay:0.6s;
+  color:red;
+}
+@keyframes scaleUpp{
+  0%,40%,90%{
+    transform:scaleY(0.001);
+  }
+  100%{
+    transform:scaleY(1);
+  }
+}

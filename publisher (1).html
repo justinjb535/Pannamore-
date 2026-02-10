@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pannamore</title>
+   <style>
+   *{
+       padding:0;
+       margin:0;
+       box-sizing: border-box;
+       text-align:center;
+   }
+   body{
+     background:white;
+   }
+  #header{
+    background:#F8F9FA;
+    position:fixed;
+    top:8px;
+    left:2%; 
+    box-shadow:0 0 2px rgba(0,0,0.05);
+    padding:10px 15px;
+    width:95%;
+    border-radius:20px;
+    margin-bottom:20%;
+    z-index:1000;
+}
+#panna{
+  color:#189;
+  text-shadow:0 1px 1px black;
+  text-align:left;
+}
+#ellpsis{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top:20%;
+  right: 5%;
+  transition: transform 0.3s ease;
+}
+    #skyie{
+        background:#189;
+        position:fixed;
+        top:0;
+        width:100%;
+        height:70px;
+        z-index:999;
+       box-shadow:0 0 6px black;
+    }
+    
+    #bNav{
+        background:#189;
+        position:fixed;
+        bottom:0;
+        width:100%;
+        left:0;
+        height:60px;
+        z-index:999;
+        box-shadow:0 0 6px black;
+        border-top-left-radius:15px;
+        border-top-right-radius:15px;
+    }
+    #iconsC{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        flex-direction:row;
+        flex-wrap:wrap;
+        gap:25%;
+    }
+    .icons{
+       position: relative;
+       display:flex;
+       flex-direction:column;
+       align-items:center;
+       /* margin-top:2%;*/
+        z-index:1002;
+    }
+    .icons::after{
+        content :"";
+        position:absolute;
+        bottom:-6px;
+        left:50%;
+        transform:translateX(-50%);
+        height:20px;
+        width:20px;
+        transition: all 0.2s ease;
+        border-radius:3px;
+    }
+    .icons.active::after{
+       background:white;
+       width:30px;
+       height:5px;
+    }
+    #circle,#circle2,#icon{
+      margin-top:1%;
+    }
+      .pulse {
+    animation: pulse 0.4s ease-out;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+
+  #sect{
+    display:flex;
+    align-items: center ;
+    justify-content: space-between;
+    flex-direction:column;
+    text-align: center;
+    font-size:23px;
+  }
+  #popP{
+    position:fixed;
+    top:0;
+    left:0;
+    background:#199;
+    color:white;
+    width:100%;
+    height:40%;
+    border-bottom-left-radius:25px;
+    border-bottom-right-radius:25px;
+   animation:fallIn 0.9s ease;
+   margin-top:16%;
+   padding:10px;
+   box-shadow:0 0 4px black;
+   z-index:998;
+  }
+  #popP.add{
+    display:block !important;
+    animation:fallIn 0.9s ease forwards;
+  }
+  #popP.remove{
+    animation:flyUp 0.95s ease forwards;
+    box-shadow:0 0 9px black;
+  }
+   li{
+     margin-bottom:8%;
+   }
+   li:hover{
+     border:1px solid white;
+     padding:10px 20px;
+     border-radius:29px;
+   }
+   @keyframes fallIn{
+     from{
+       transform:translateY(-500px);
+     }
+     to{
+       transform:translate(0);
+     }
+   }
+   @keyframes flyUp{
+     from{
+       transform:translateY(0);
+     }
+     to{
+       transform:translateY(-900px);
+     }
+   }
+   #ellipsis{
+     display:flex;
+     align-items:center;
+     justify-content: space-between;
+     flex-direction:column;
+   /*  flex-wrap:wrap;*/
+     margin-top:50%;
+     height:20px;
+   }
+   #ellipsis span{
+     width:20px;
+     height:5px;
+     background:black;
+   }
+   #profileP{
+     text-align: center;
+     height:100%; 
+     animation:fadeIn 0.5s ease forwards;
+   }
+   #picC{
+     background:#f8f9fa;
+     box-shadow:0 0 2px black;
+     border-radius:100%;
+     width:30%;
+     height:15%;
+     position:absolute;
+     top:10%;
+     left:1%;
+     
+   }
+   #name{
+     position:absolute;
+     top:13%;
+     left:55%;
+     transform:translateX(-50%);
+   }
+   #number{
+     position:absolute;
+     top:17%;
+     left:55%;
+     transform:translateX(-50%);
+   }
+   #email{
+     position:absolute;
+     top:20%;
+     left:57%;
+     transform:translateX(-50%);
+   }
+   #publisherP{
+     margin-top:30%;
+     animation:fadeIn 0.8s ease forwards;
+   }
+   @keyframes fadeIn{
+     from{
+       opacity:0;
+     }
+     to{
+       opacity:1;
+     }
+   }
+   #pubC{
+     display:flex;
+     align-items:center;
+     justify-content:space-between;
+     flex-direction:column;
+   }
+   #bookName{
+      display: block;
+      width: 280px;
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      font-size: 16px;
+      color: #555;
+      background-color: white;
+      cursor: pointer;
+      text-align:center;
+   }
+    #file-input {
+      display: none;
+    }
+
+    /* Style the label to look like a text input */
+    .file-input-label {
+      display: block;
+      width: 280px;
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      font-size: 16px;
+      color: #555;
+      background-color: white;
+      cursor: pointer;
+      text-align:center;
+    }
+
+    .file-input-label:hover {
+      border-color: #888;
+    }
+
+    /* Optional: Show filename after selection */
+    .file-name {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #333;
+    }
+       #publish-btn {
+      padding: 10px 20px;
+      background-color:#199;
+      color:white;
+      border:2px solid white;
+      border-radius: 29px;
+      box-shadow:0 0 3px black;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top:5%;
+      margin-left:55%;
+      right:1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    #publish-btn:hover {
+      background-color:white;
+      color:#189;
+      border:0.5px solid white;
+    }
+    #bookshelf{
+      margin-bottom:20%;
+    }
+    .book-item{
+      display:flex;
+      align-items:center;
+      justify-content:space-around;
+      flex-direction:column;
+      margin-top:5%;
+      margin-bottom:;
+      background:none;
+    }
+    #plus{
+      position:fixed;
+      bottom:10%;
+      left:50%;
+      transform:translate(-50%);
+      border-radius:29px;
+      border:1px solid white;
+      box-shadow:0 0 3px black;
+      width:70%;
+      padding:10px 20px;
+      color:white;
+      font-size:20px;
+      background:#189;
+    }
+    #reader-dialog{
+      animation:fadeIn 0.9s ease;
+    }
+    .layout{
+      flex-basis: calc(5% - 50px);
+      border-radius: 18px;
+      padding:10px;
+      box-sizing: border-box;
+      background: #F8F9FA;
+      margin:10px;
+      border: 1px solid white;
+      height:1%;
+      box-shadow: 0 0 4px black;
+      perspective: 100px;
+    }
+.library{
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom:20%;
+    }
+  #searchBAR{
+      width:65%;
+      padding:0.7%;
+      border-radius:20px;
+      font-size:20px;
+      border:none;
+      background:#f8f9fa;
+    }
+    input[type="search"]:focus{
+      outline:none;
+      caret-color:#189;
+      caret-shape: block;
+     line-height:1em;
+    }
+    #search{
+      border:none;
+      background:#f8f9fa;
+      position: absolute;
+      top:18%;
+      margin-left:65%;
+    }
+    .layout2{
+      animation:fadeIn 1s ease-in;
+      border-bottom:1px solid black;
+      margin:20px;
+      padding:5px;
+  }
+  .settings-icon{
+    animation:rotate 1.3s infinite;
+  }
+  @keyframes rotate{
+    from{
+      transform:rotate(0deg);
+    }
+    to{transform:rotate(180deg);}
+  }
+    </style>
+</head>
+<body >
+ <header id="header">
+    <h2 id="panna">Pannamore</h2>  
+     <input type="search" placeholder="Search for book" id="searchBAR" style="display:none;"/> <button id="search"style="display:none;"><svg width="30" height="30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="40" cy="40" r="25" stroke="black" stroke-width="5" fill="none" />
+  <line x1="55" y1="55" x2="80" y2="80" stroke="black" stroke-width="12" /></svg></button>
+  
+     <span id="ellpsis">
+       <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#189" class="size-4">
+  <path d="M2 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM6.5 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM12.5 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />
+</svg>
+     </span>
+   </header> 
+   <div id="skyie"></div>
+ <div id="sect">
+   <div id="popP" style="display:none;">
+   <li style="margin-top:5%;" id="sBttn" onclick="pressSbt()">Search</li>
+   <li onclick="alert('settings are under construction'); pP.classList.add('remove');;">Settings</li>
+   <li id="libraryBtn">Library</li>
+   <li>About Us</li>
+   <li>Ts & Cs</li>
+    </div>
+ </div>
+<!-- <div id="ellipsis">
+   <span></span>
+   <span></span>
+   <span></span>
+ </div>-->
+ 
+ <div id="profileP" style="display:none;">
+   <div id="picC"></div>
+   <h2 id="name">Justin.Skyie</h2>
+   <h5 id="number">0693398053</h5>
+   <h4 id="email">justinjb535@gmail.com</h4>
+ <hr style="margin-top:55%;">
+ <div id="booksContainer">
+ <p><em>Press the button below to publish a book</em></p>
+ </div>
+<button id="plus">Publish book</button>
+ </div>
+ 
+  <div id="publisherP" style="display:none;">
+   <div id='pubC'>
+     <h3 id="cap">Please insert a picture</h3>
+   <label for="image-input" capture="camera" class="FAB" id="image-preview"><svg width="80" height="80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+  <path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" />
+  <path fill-rule="evenodd" d="M9.344 3.071a49.52 49.52 0 0 1 5.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 0 0 1.11-.71l.822-1.315a2.942 2.942 0 0 1 2.332-1.39ZM6.75 12.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Zm12-1.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+</svg>
+</label>
+<input type="file" accept="image/*"id="image-input" capture="camera" style="display:none;" multiple>
+<br>
+<div id="image-preview" style="top:30%; position:fixed;max-width: 100%;"></div>
+
+   <input type="text" placeholder="Name of your book" id="bookName"> <br>
+    <!-- Hidden file input -->
+<input type="file" id="file-input" accept=".txt,.pdf"/>
+
+<!-- Styled label that acts as the "text-like" input -->
+<label for="file-input" class="file-input-label" id="file-label">
+    Enter file...
+  </label>
+  <div class="file-name" id="file-name"></div>
+  <p>OR</p>
+ <br>
+  <textarea name="storyScript" id="storyScript" rows="10" cols="40" placeholder="Paste your story here" style="text-align:center;"></textarea>
+  <p id="reader-status"></p>
+  <button id="publish-btn">Publish</button>
+ </div>
+ </div>
+ <div id="bsP" style="color:black;margin-top:20%;">
+   <h2 >📚 My Bookshelf</h2>
+<div id="bookshelf" style="">
+    <!-- Books will appear here -->
+ </div>
+ </div>
+  <div class="library" style="display:none; margin-top:20%;">
+    <p id="NoBooks">No Books yet</p>
+  </div>
+  <div id="display" style="display:none; margin-top:20%;"></div>
+  
+  <div id="themStats" style="display:none; margin-top:40%;">
+    <h2 id ="bookRead">SORRY STATS PAGE IS STILL UNDER CONSTRUCTION<br><br><svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="settings-icon" id="settings">
+  <circle cx="12" cy="12" r="4"></circle>
+  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65
+    1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0
+    0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65
+    1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0
+    0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65
+    1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0
+    0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65
+    1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65
+    0 0 0-1.51 1z"></path></svg></h2><h2>🛠️📈📉📉📇📖</h2><br>
+    <h2>you will be notified when page starts working </h2>
+  </div>
+   <div id="bNav">
+    <nav id="iconsC">
+   <i class="icons" data-page="profile" id="pro"><svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" viewBox="0 0 32 32" id="user-interface">
+       <path d="M138,141C138.552,141 139,140.552 139,140C139,133.377 133.623,128 127,128C120.377,128 115,133.377 115,140C115,140.552 115.448,141 116,141L138,141ZM127,113C123.137,113 120,116.137 120,120C120,123.863 123.137,127 127,127C130.863,127 134,123.863 134,120C134,116.137 130.863,113 127,113Z" transform="translate(-111 -111)"fill="white"></path></svg></i>
+       
+   <i class="icons active" data-page="Home" id="home"><svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M3 9.5L12 3L21 9.5V20C21 20.55 20.55 21 20 21H15C14.45 21 14 20.55 14 20V15H10V20C10 20.55 9.55 21 9 21H4C3.45 21 3 20.55 3 20V9.5Z" fill="white"/></svg></i>
+  
+       <i id="icon" data-page="stats" class="icons" onclick="this.querySelector('svg').classList.toggle('pulse')">
+    <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+    <!-- Bar 1 -->
+    <rect x="8" y="40" width="8" height="0" fill="#f8f9fa">
+      <animate attributeName="y" from="40" to="20" dur="0.6s" fill="freeze" id="anim1" />
+      <animate attributeName="height" from="0" to="20" dur="0.6s" fill="freeze" />
+    </rect>
+    <!-- Bar 2 -->
+     <rect x="26" y="40" width="8" height="0" fill="#f8f9fa">
+      <animate attributeName="y" from="40" to="24" dur="0.5s" fill="freeze" id="anim3" />
+      <animate attributeName="height" from="0" to="16" dur="0.5s" fill="freeze" />
+    </rect>
+    <!-- Bar 3 -->
+       <rect x="17" y="40" width="8" height="0" fill="white">
+      <animate attributeName="y" from="40" to="10" dur="0.8s" fill="freeze" id="anim2" />
+      <animate attributeName="height" from="0" to="30" dur="0.8s" fill="freeze" />
+    </rect>
+  </svg>
+</i>
+   </nav>
+   </div>
+   <script>
+  // Wait for DOM to load
+  document.addEventListener("DOMContentLoaded", () => {
+    const icon = document.getElementById("icon");
+    const themStats = document.getElementById("themStats");
+
+    icon.addEventListener("click", () => {
+      // Re-trigger all <animate> elements inside the clicked SVG
+      const animations = icon.querySelectorAll("animate");
+      animations.forEach(anim => {
+        anim.beginElement(); // Restart animation
+      });
+    proPage.style.display = "none";
+    bsP.style.display = "none";
+    
+    });
+  });
+  
+  const iconsInd = document.querySelectorAll(".icons")
+  
+  iconsInd.forEach(icon =>{
+    icon.addEventListener('click',()=>{
+      iconsInd.forEach(i => i.classList.remove('active'));
+      icon.classList.add('active');
+      library.style.display = "none"
+      panna.style.display = "block";
+      searchBr.style.display = "none";
+      display.style.display = "none";
+      search.style.display = "none";
+      themStats.style.display = "block";
+
+      const page = icon.getAttribute('data-page');
+      console.log('it should be show what page are we in now ')
+    })
+  });
+  const ellp = document.getElementById('ellpsis');
+  const pP = document.getElementById("popP");
+  
+  ellp.addEventListener('click', (e) => {
+  e.stopPropagation(); // Prevent immediate close
+  pP.classList.remove("remove");
+  pP.classList.add("add");
+});
+
+// Hide popup when clicking outside
+document.addEventListener('click', () => {
+  if (pP.classList.contains("add")) {
+   // pP.classList.remove("add");
+    pP.classList.add("remove");
+
+    // Hide element after animation ends
+/*    pP.addEventListener("animationend", () => {
+      pP.style.display = "none";
+      pP.classList.remove("remove");
+    }, { once: true });*/
+  }
+});
+
+// Optional: Prevent closing when clicking inside popup
+pP.addEventListener('click', (e) => {
+  e.stopPropagation();
+});
+ 
+const searchBr = document.getElementById("searchBAR");
+const sbttn = document.getElementById("sbttn");
+const search = document.getElementById('search');
+const panna = document.getElementById("panna");
+const home = document.getElementById('home');
+const pro = document.getElementById('pro')
+const proPage = document.getElementById("profileP");
+const pubP = document.getElementById('publisherP');
+const plus = document.getElementById("plus");
+const bsP = document.getElementById("bsP");
+//const library = document.querySelector(".library")
+const libraryB = document.getElementById('libraryBtn');
+
+home.addEventListener('click',()=>{
+  proPage.style.display = "none";
+  pubP.style.display = "none";
+  bsP.style.display = "block";
+  library.style.display = "none";
+  search.style.display = "none";
+  display.style.display = "none";
+    panna.style.display = "block";
+  searchBr.style.display = "none";
+  themStats.style.display = "none";
+});
+pro.addEventListener('click',()=>{
+  proPage.style.display = "block";
+  bsP.style.display = "none";
+  library.style.display = "none";
+  search.style.display = "none";
+  display.style.display = "none";
+    panna.style.display = "block";
+  searchBr.style.display = "none";
+  themStats.style.display = "none";
+});
+
+plus.addEventListener("click",()=>{
+  proPage.style.display = "none";
+  pubP.style.display = "block";
+  library.style.display = "none"
+  search.style.display = "none";
+  display.style.display = "none";
+    panna.style.display = "block";
+  searchBr.style.display = "none";
+  themStats.style.display = "none";
+});
+
+function pressSbt(){
+  panna.style.display = "none";
+  searchBr.style.display = "block";
+  pP.classList.add("remove");
+  proPage.style.display = "none";
+  pubP.style.display = "none";
+  bsP.style.display = "none";
+  library.style.display = "none"
+  search.style.display = "block";
+  display.style.display = "block";
+  themStats.style.display = "none";
+}
+
+libraryB.addEventListener('click',()=>{
+  library.style.display = "block";
+  proPage.style.display = "none";
+  pubP.style.display = "none";
+  bsP.style.display = "none";
+  search.style.display = "none";
+  pP.classList.add("remove");
+  display.style.display = "none";
+  panna.style.display = "block";
+  searchBr.style.display = "none";
+  themStats.style.display = "none";
+});
+
+</script>
+<script src="final.js"></script>
+<script src="bS.js"></script>
+<script src="search.js"></script>
+</body>
+</html>
