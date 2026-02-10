@@ -1,0 +1,201 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body {
+    font-size: 15pt;
+    color:#212529;
+    background:#FFFFFF;
+    width:100%;
+    height:100%;
+}
+#head{
+    background:#F8F9FA;
+    position:fixed;
+    top:8px;
+    left:2%; 
+    box-shadow:0 0 2px rgba(0,0,0.05);
+    padding:10px 15px;
+    width:95%;
+    border-radius:20px;
+    margin-bottom:20%;
+    z-index:1000;
+}
+
+.ellipsis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  height: 20px;
+  top:31%;
+  right: 5%;
+  transition: transform 0.3s ease;
+  
+}
+.ellipsis:hover {
+  transform: scale(1.3);
+}
+.ellipsis span {
+  width: 25px;
+  height: 1px;
+  background-color: #E0E0E0;
+  border-radius: 14%;
+  /*border:0.2px solid black;*/
+  box-shadow: 0 0 1.5px black;
+}
+#cancel{
+  position: absolute;
+  height: 20px;
+  top:31%;
+  right: 5%;
+}
+#navList{
+  position:fixed;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:50%;
+  padding:10px;
+  text-align: center;
+  margin-top:50%;
+  gap:21px;
+  background:#189;
+  z-index:1002;
+  border-radius:25px;
+  box-shadow:0 1px 6px black;
+  animation:fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+#find1{
+  position:fixed;
+  top:27px;
+  left:68%;
+}
+#search{
+  animation:scaleToo 1.5s ease-in-out backwards;
+  animation-delay:.1s;
+  border:none;
+  font-size:29px;
+  background: transparent;
+  margin-bottom:30px;
+  color: white;
+  text-shadow: 0 1px 3px #000;
+}
+#market{
+  animation:scaleToo 1.6s ease-in-out backwards;
+  animation-delay:0.7s;
+  border:none;
+  font-size:29px;
+  background: transparent;
+  margin-bottom:30px;
+  color: white;
+  text-shadow: 0 1px 3px #000;
+}
+#noti{
+  animation:scaleToo 1.7s ease-in-out backwards;
+  animation-delay:0.9s;
+  border:none;
+  font-size:29px;
+  background: transparent;
+  margin-bottom:30px;
+  color: white;
+  text-shadow: 0 1px 3px #000;
+}
+#profile{
+  animation:scaleToo 1.9s ease-in-out backwards;
+  animation-delay:1.2s;
+  border:none;
+  font-size:29px;
+  background: transparent;
+  margin-bottom:30px;
+  color: white;
+  text-shadow: 0 1px 3px #000;
+}
+#abs{
+  animation:scaleToo 1.99s ease-in-out backwards;
+  animation-delay:1.7s;
+  border:none;
+  font-size:29px;
+  background: transparent;
+  margin-bottom:30px;
+  color: white;
+  text-shadow: 0 1px 3px #000;
+}
+@keyframes scaleToo{
+  0%,20%,40%{
+    opacity:0;
+    transform:scaleX(0.001);
+    /*transform:scaleY(0.05);*/
+  }
+  60%,80%,100%{
+    opacity:1;
+    transform:scaleX(1);
+   /* transform:scaleY(1);*/
+  }
+}
+
+#skyie{
+  background:#188;
+  width:100%;
+  height:70px;
+  position: fixed;
+  top:0;
+  margin-bottom:50%;
+  z-index:999;
+  box-shadow: 0 0 4px black;
+}
+input[type="search"]:focus{
+   caret-color:#189;
+   text-align:center;
+   outline:none;
+   text-align: center;
+ }
+ #searchBar{
+   text-align:center;
+ }
+ #panna{
+   color:#189;
+   text-shadow:1px 0.4px 2px black;
+ }
+
+ .layout2{
+      flex-basis: calc(50% - 10000px);
+      border-radius: 18px;
+      padding:20px;
+      box-sizing: border-box;
+      background: #F8F9FA;
+      margin:10px;
+      border: 1px solid white;
+      height:1%;
+      box-shadow: 0 0 4px black;
+      perspective: 100px;
+      animation:fadeIn 1s ease-in;
+    }
+  .layout{
+      animation:fadeIn 1s ease-in;
+      border-bottom:1px solid black;
+      margin:20px;
+      padding:5px;
+  }
+.library{
+      margin-top:25%;
+      margin-bottom:20%;
+    }
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+      }
+      to{
+        opacity:1;
+      }
+    }
+    
