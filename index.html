@@ -14,6 +14,7 @@
 </style>
   <!-- Custom Styles -->
   <link rel="stylesheet" href="pannamore.css">
+  <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
@@ -44,5 +45,14 @@
 <p id="display" style="margin-top:20%;"></p>
   <script src="pannaSec.js"></script>
   <script src="secDi.js"> </script>
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then((reg) => console.log('SW registered:', reg.scope))
+        .catch((err) => console.log('SW registration failed:', err));
+    });
+  }
+</script>
 </body>
 </html>
