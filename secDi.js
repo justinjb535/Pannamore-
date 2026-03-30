@@ -1,6 +1,10 @@
-let library = document.querySelector(".library")
-function loadBookshelf() {
-  const noBooks = document.getElementById('NoBooks')
+const noBooks = document.getElementById('NoBooks') || (function(){
+ const el = document.createElement('div');
+ el.id = 'NoBooks';
+ document.querySelector('.library')?.appendChild(el);
+ return el;
+ })();
+
   const books = JSON.parse(localStorage.getItem("uploadedBooks")) || [];
 
   if (books.length === 0) {
