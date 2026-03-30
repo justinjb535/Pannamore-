@@ -14,10 +14,9 @@ tugle.onclick =()=>{
 const ppb = document.getElementById('popup-bttn');
 const nL = document.getElementById("navList");
 
-ppb.addEventListener('click',()=>{
-    nL.style.display = "";
-    nL.style.display === "flex"?"none":"flex";
-});
+ppb.addEventListener('click', () => {
+ nL.style.display = nL.style.display === "flex" ? "none" : "flex";
+ });
 
 document.addEventListener("click",(event)=>{
    if(!
